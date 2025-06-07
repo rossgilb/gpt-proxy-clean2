@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const axios = require('axios');
 const app = express();
@@ -57,7 +59,7 @@ app.post('/chat', async (req, res) => {
       temperature: 0.2
     }, {
       headers: {
-        'Authorization': 'Bearer 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',
+        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
         'Content-Type': 'application/json'
       }
     });
